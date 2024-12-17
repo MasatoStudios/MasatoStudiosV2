@@ -25,3 +25,12 @@
 	display: flex;
 	gap: 1rem;
 }
+
+.navDivider {
+	cursor: default;
+	user-select: none;
+}
+
+.LanguageSelectorContainer{
+	gap: 0.25rem;
+}

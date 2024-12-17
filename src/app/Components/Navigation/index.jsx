@@ -31,6 +31,23 @@ const Navbar = () => {
 					Contact
 				</Link>
 			</div>
+
+			<div
+				className={clsx(
+					styles.NavLinksContainer,
+					styles.LanguageSelectorContainer
+				)}
+			>
+				<Link className={clsx(styles.link)} href='/'>
+					EN
+				</Link>
+
+				<span className={styles.navDivider}> | </span>
+
+				<Link className={clsx(styles.link)} href='/jp/'>
+					JP
+				</Link>
+			</div>
 		</nav>
 	)
 }
