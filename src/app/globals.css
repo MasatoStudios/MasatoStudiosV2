@@ -14,14 +14,6 @@
 /* Create font-face rules for the fonts used in the project */
 
 /* example font-face rule for Roboto font: */
-/* @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: local('Roboto'), local('Roboto-Regular'),
-		url('../fonts/roboto-v20-latin-regular.woff2') format('woff2');
-} */
 
 @font-face {
 	font-family: 'Helvetica';
