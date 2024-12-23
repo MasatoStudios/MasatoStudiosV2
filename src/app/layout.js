@@ -1,6 +1,5 @@
 import localFont from 'next/font/local'
 import './globals.css'
-import Navbar from './Components/Navigation'
 import Footer from './Components/Footer'
 
 // const geistMono = localFont({
@@ -18,10 +17,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body>
-			  <Navbar />
-        <main>
 				{children}
-        </main>
         <Footer />
 			</body>
 		</html>

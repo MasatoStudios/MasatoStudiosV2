@@ -11,11 +11,11 @@ import styles from './navbar.module.css'
 
 const Navbar = () => {
 	return (
-		<nav className={styles.navContainer}>
+		<div className={styles.navContainer}>
 			<div className={styles.navNameContainer}>
 				<Link className={clsx(styles.link)} href='/'>
 					<span className={styles.navNameFullSpan}>
-						<span className={styles.navNameFirst}>Masato</span>
+						<span className={styles.navNameFirst}>Masato </span>
 						<span className={styles.navNameSecond}>Studios</span>
 					</span>
 				</Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
 					JP
 				</Link>
 			</div>
-		</nav>
+		</div>
 	)
 }
 
