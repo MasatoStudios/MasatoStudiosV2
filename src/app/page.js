@@ -2,11 +2,40 @@
 
 import Image from 'next/image'
 import styles from './page.module.css'
+
+import Hero from './Components/Hero'
+import Featured from './Components/FeaturedWork'
+
+import './globals.css'
+
 import { useEffect, useState } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
 	const [gradient, setGradient] = useState('')
 
+	// USED FOR SIDE SCROLLING SECTION
+	useEffect(() => {
+		const sections = gsap.utils.toArray('.panel')
+
+		gsap.to(sections, {
+			xPercent: -100 * (sections.length - 1),
+			ease: 'none',
+			scrollTrigger: {
+				trigger: '.container',
+				pin: true,
+				invalidateOnRefresh: true,
+				anticipatePin: 1,
+				scrub: 1.23,
+				end: () => '+=' + document.querySelector('.container').offsetWidth,
+			},
+		})
+	}, [])
+
+	// USED FOR GRADIENT BACKGROUND
 	useEffect(() => {
 		// Define a list of colors
 		const colors = [
@@ -35,7 +64,16 @@ export default function Home() {
 
 	return (
 		<div>
-			<p>Hello World</p>
+			<Hero />
+
+			<div className='container'>
+				<section className='panel'></section>
+				<section className='panel'></section>
+				<section className='panel'></section>
+				<section className='panel'></section>
+			</div>
+
+			<Featured />
 		</div>
 	)
 }

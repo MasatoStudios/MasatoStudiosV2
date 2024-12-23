@@ -18,14 +18,14 @@
 @font-face {
 	font-family: 'Helvetica';
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400; /* Regular weight */
 	src: local('Helvetica'), url('./fonts/Helvetica.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Helvetica Oblique';
-	font-style: normal;
-	font-weight: normal;
+	font-style: oblique;
+	font-weight: 400; /* Regular weight */
 	src: local('Helvetica Oblique'),
 		url('./fonts/Helvetica-Oblique.woff') format('woff');
 }
@@ -33,30 +33,31 @@
 @font-face {
 	font-family: 'Helvetica Compressed';
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400; /* Regular weight */
 	src: local('Helvetica Compressed'),
-		url('./fonts/helvetica-compressed-5871d14b6903a.woff') format('woff');
+		url('./fonts/helvetica-compressed.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Helvetica Rounded Bold';
+	font-family: 'Helvetica Rounded';
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 700; /* Bold weight */
 	src: local('Helvetica Rounded Bold'),
-		url('./fonts/helvetica-rounded-bold-5871d05ead8de.woff') format('woff');
+		url('./fonts/helvetica-rounded-bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Helvetica';
 	font-style: normal;
-	font-weight: normal;
-	src: local('Helvetica'), url('./fonts/Helvetica-Bold.woff') format('woff');
+	font-weight: 700; /* Bold weight */
+	src: local('Helvetica Bold'),
+		url('./fonts/Helvetica-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Helvetica Bold Oblique';
-	font-style: normal;
-	font-weight: normal;
+	font-style: oblique;
+	font-weight: 700; /* Bold weight */
 	src: local('Helvetica Bold Oblique'),
 		url('./fonts/Helvetica-BoldOblique.woff') format('woff');
 }
@@ -64,9 +65,9 @@
 @font-face {
 	font-family: 'Helvetica Light';
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 300; /* Light weight */
 	src: local('Helvetica Light'),
-		url('./fonts/helvetica-light-587ebe5a59211.woff') format('woff');
+		url('./fonts/helvetica-light.woff') format('woff');
 }
 
 /* TODO: FIND FONT AND MAKE FONT FAMILY TO BE USED THROUGHOUT PROJECT */
@@ -77,22 +78,38 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-weight: 400;
+	color: black;
+	overflow-x: hidden;
 }
 
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+html {
+	height: 100%;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
 
 body {
 	margin: 0;
 	height: 100vh;
-	background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+	background: linear-gradient(135deg, #ffffff, #dcdcdc, #c0c0c0, #ffffff);
 	background-size: 200% 200%; /* Larger background for smooth movement */
 	animation: gradientShift 10s ease infinite; /* Infinite animation */
+	position: relative;
+	height: unset;
+	overflow-x: hidden;
+	overflow-y: visible;
 }
 
 @keyframes gradientShift {
@@ -119,4 +136,34 @@ a {
 	all: unset;
 	cursor: pointer;
 	user-select: none;
+}
+
+.scroll-container {
+	transform: translateY(0);
+	will-change: transform;
+}
+
+/* SideScrolling Styles */
+
+.panel {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background: #333;
+	padding: 0;
+	width: 100vw;
+	height: 100%;
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+.container {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 500%;
+	height: 100vh;
 }
