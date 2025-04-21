@@ -12,7 +12,8 @@ const Hero = () => {
 			<div className={styles.heroTextContainer}>
 				<div className={styles.SloganLeft}>
 					<h1 className={styles.SloganText}>
-						INSERT SLOGAN HERE FOR THE COMPANY
+						Creative direction with precision, built for brands that move
+						forward
 					</h1>
 				</div>
 				<div className={styles.LogoRight}>
