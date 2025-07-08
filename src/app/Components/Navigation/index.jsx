@@ -38,15 +38,15 @@ const Navbar = () => {
 					styles.LanguageSelectorContainer
 				)}
 			>
-				<Link className={clsx(styles.link)} href='/'>
+				{/* <Link className={clsx(styles.link)} href='/'>
 					EN
-				</Link>
+				</Link> */}
 
-				<span className={styles.navDivider}> | </span>
+				{/* <span className={styles.navDivider}> | </span>
 
 				<Link className={clsx(styles.link)} href='/jp/'>
-					JP
-				</Link>
+					ES
+				</Link> */}
 			</div>
 		</div>
 	)
